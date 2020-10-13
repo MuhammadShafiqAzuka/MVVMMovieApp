@@ -1,11 +1,11 @@
-package com.azuka.mvvmmovieapp.ui.data.model
+package com.azuka.mvvmmovieapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(
     val page: Int,
     @SerializedName("results")
-    val movieList: List<MovieDetails>,
+    val movieList: List<Movie>,
     @SerializedName("total_pages")
     val totalPages: Int,
     @SerializedName("total_results")

@@ -1,13 +1,13 @@
-package com.azuka.mvvmmovieapp.ui.moviedetails
+package com.azuka.mvvmmovieapp.ui.popular
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.azuka.mvvmmovieapp.data.model.MovieDetails
+import androidx.paging.PagedList
+import com.azuka.mvvmmovieapp.data.model.Movie
 import com.azuka.mvvmmovieapp.data.repository.NetworkState
 import io.reactivex.disposables.CompositeDisposable
 
-class SingleMovieDetailsViewModel
-    (private val movieRepository: MovieDetailsRepository, movieId: Int) : ViewModel() {
+class MainActivityViewModel(private val movieRepository: PopularPagedListRepository) : ViewModel() {
 
     // THIS VIEWMODEL CLASS WILL GET LOGIC FROM ITS OWN REPO
     // PASS TO LIVE DATA
@@ -15,13 +15,18 @@ class SingleMovieDetailsViewModel
 
     private val compositeDisposable = CompositeDisposable()
 
-    val movieDetails: LiveData<MovieDetails> by lazy {
-        movieRepository.fetchSingleMovieDetails(compositeDisposable, movieId)
+    val moviePagedList: LiveData<PagedList<Movie>> by lazy {
+        movieRepository.fetchLiveMoviePagedList(compositeDisposable)
     }
 
     val networkState: LiveData<NetworkState> by lazy {
-        movieRepository.getMovieDetailsNetworkState()
+        movieRepository.getNetworkState()
     }
+
+    fun listIsEmpty(): Boolean {
+        return moviePagedList.value?.isEmpty() ?: true
+    }
+
 
     override fun onCleared() {
         super.onCleared()

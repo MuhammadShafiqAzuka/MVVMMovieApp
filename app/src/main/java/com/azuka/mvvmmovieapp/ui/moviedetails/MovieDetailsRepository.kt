@@ -1,10 +1,10 @@
 package com.azuka.mvvmmovieapp.ui.moviedetails
 
 import androidx.lifecycle.LiveData
-import com.azuka.mvvmmovieapp.ui.data.model.MovieDetails
-import com.azuka.mvvmmovieapp.ui.data.repository.MovieDetailsNetworkData
-import com.azuka.mvvmmovieapp.ui.data.repository.NetworkState
-import com.azuka.mvvmmovieapp.ui.data.retrofit.RetrofitGet
+import com.azuka.mvvmmovieapp.data.model.MovieDetails
+import com.azuka.mvvmmovieapp.data.repository.MovieDetailsNetworkData
+import com.azuka.mvvmmovieapp.data.repository.NetworkState
+import com.azuka.mvvmmovieapp.data.retrofit.RetrofitGet
 import io.reactivex.disposables.CompositeDisposable
 
 class MovieDetailsRepository(private val apiService: RetrofitGet) {

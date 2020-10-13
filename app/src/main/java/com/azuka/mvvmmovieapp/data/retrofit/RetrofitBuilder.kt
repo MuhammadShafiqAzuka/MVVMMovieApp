@@ -1,4 +1,4 @@
-package com.azuka.mvvmmovieapp.ui.data.retrofit
+package com.azuka.mvvmmovieapp.data.retrofit
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -16,6 +16,7 @@ const val FIRST_PAGE = 1
 const val POST_PER_PAGE = 20
 
 object RetrofitBuilder {
+
     fun getClient(): RetrofitGet {
 
         val requestInterceptor = Interceptor { chain ->

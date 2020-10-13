@@ -1,10 +1,10 @@
-package com.azuka.mvvmmovieapp.ui.data.repository
+package com.azuka.mvvmmovieapp.data.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.azuka.mvvmmovieapp.ui.data.model.MovieDetails
-import com.azuka.mvvmmovieapp.ui.data.retrofit.RetrofitGet
+import com.azuka.mvvmmovieapp.data.model.MovieDetails
+import com.azuka.mvvmmovieapp.data.retrofit.RetrofitGet
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 

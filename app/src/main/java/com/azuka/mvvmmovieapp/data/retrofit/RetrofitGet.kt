@@ -1,7 +1,7 @@
-package com.azuka.mvvmmovieapp.ui.data.retrofit
+package com.azuka.mvvmmovieapp.data.retrofit
 
-import com.azuka.mvvmmovieapp.ui.data.model.MovieDetails
-import com.azuka.mvvmmovieapp.ui.data.model.MovieResponse
+import com.azuka.mvvmmovieapp.data.model.MovieDetails
+import com.azuka.mvvmmovieapp.data.model.MovieResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
