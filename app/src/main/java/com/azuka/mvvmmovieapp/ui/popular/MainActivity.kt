@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         rv_movie_list.layoutManager = gridLayoutManager
         rv_movie_list.setHasFixedSize(true)
         rv_movie_list.adapter = movieAdapter

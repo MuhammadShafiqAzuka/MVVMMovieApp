@@ -3,6 +3,7 @@ package com.azuka.mvvmmovieapp.ui.moviedetails
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -34,11 +35,11 @@ class MovieDetailsActivity : AppCompatActivity() {
         viewModel = getViewModel(movieId)
 
         //
-        viewModel.movieDetails.observe(this, {
+        viewModel.movieDetails.observe(this, Observer {
             bindUI(it)
         })
 
-        viewModel.networkState.observe(this, {
+        viewModel.networkState.observe(this, Observer {
             progress_bar.visibility = if (it == NetworkState.LOADING) View.VISIBLE else View.GONE
             txt_error.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
 

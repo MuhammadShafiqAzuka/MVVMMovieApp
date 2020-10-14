@@ -22,9 +22,7 @@ class PopularPageListAdapter(private val context: Context) :
 
     val MOVIE_VIEW_TYPE = 1
     private val NETWORK_VIEW_TYPE = 2
-
     private var networkState: NetworkState? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -112,7 +110,6 @@ class PopularPageListAdapter(private val context: Context) :
             }
         }
     }
-
 
     fun setNetworkState(newNetworkState: NetworkState) {
         val previousState = this.networkState

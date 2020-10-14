@@ -29,7 +29,6 @@ class PopularPagedListRepository(private val apiService: RetrofitGet) {
             .build()
 
         moviePagedList = LivePagedListBuilder(moviesDataSourceFactory, config).build()
-
         return moviePagedList
     }
 

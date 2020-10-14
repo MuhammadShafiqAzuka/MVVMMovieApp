@@ -1,5 +1,6 @@
 package com.azuka.mvvmmovieapp.data.retrofit
 
+import com.azuka.mvvmmovieapp.data.model.Genre
 import com.azuka.mvvmmovieapp.data.model.MovieDetails
 import com.azuka.mvvmmovieapp.data.model.MovieResponse
 import io.reactivex.Single
@@ -14,4 +15,7 @@ interface RetrofitGet {
 
     @GET("movie/{movie_id}")
     fun getMovieDetails(@Path("movie_id") id: Int): Single<MovieDetails>
+
+    @GET("genre/movie/list")
+    fun getMovieList(): Single<Genre>
 }
