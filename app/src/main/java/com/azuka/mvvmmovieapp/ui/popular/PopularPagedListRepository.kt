@@ -33,7 +33,7 @@ class PopularPagedListRepository(private val apiService: RetrofitGet) {
     }
 
     fun getNetworkState(): LiveData<NetworkState> {
-        return Transformations.switchMap<MovieDataSource, NetworkState>(
+        return Transformations.switchMap(
             moviesDataSourceFactory.moviesLiveDataSource, MovieDataSource::networkState
         )
     }

@@ -1,6 +1,9 @@
 package com.azuka.mvvmmovieapp.ui.popular
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
@@ -11,6 +14,7 @@ import com.azuka.mvvmmovieapp.R
 import com.azuka.mvvmmovieapp.data.repository.NetworkState
 import com.azuka.mvvmmovieapp.data.retrofit.RetrofitBuilder
 import com.azuka.mvvmmovieapp.data.retrofit.RetrofitGet
+import com.azuka.mvvmmovieapp.ui.movielist.MovieListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -62,6 +66,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_list, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_genres -> {
+                val intent = Intent(this, MovieListActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
     private fun getViewModel(): MainActivityViewModel {
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
